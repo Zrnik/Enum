@@ -16,16 +16,9 @@ $Rounds = pow(10, 7);
  *
  * C:\Code2\Enum>php benchmark/cache.php
  *
- *            (isset) cached: 2149.94192 ms
- * (array_key_exists) cached: 2215.25002 ms
- *                   created: 6488.66606 ms
- *
- * 10^8
- *
- * C:\Code2\Enum>php benchmark/cache.php
- *            (isset) cached: 24595.64519 ms
- * (array_key_exists) cached: 24075.32406 ms
- *                   created: 64699.00203 ms
+ *            (isset) cached: 2085.33812 ms
+ * (array_key_exists) cached: 2372.4761 ms
+ *                   created: 6693.28809 ms
  *
  */
 class testcache
@@ -42,9 +35,9 @@ function getFromCacheIsset($className)
     return testcache::$cacheTest[$className];
 }
 
-function getFromCachKeyExists($className)
+function getFromCacheKeyExists($className)
 {
-    if (!array_key_exists(testcache::$cacheTest, $className))
+    if (!array_key_exists($className, testcache::$cacheTest))
         testcache::$cacheTest[$className] = (new ReflectionClass($className))->getConstants();
 
     return testcache::$cacheTest[$className];
@@ -68,9 +61,9 @@ echo "            (isset) cached: " . $speed_cached . " ms\n";
 
 Debugger::timer("speed-cached-ake");
 for ($i = 0; $i < $Rounds; $i++) {
-    getFromCacheIsset("Exception");
-    getFromCacheIsset("stdClass");
-    getFromCacheIsset("Directory");
+    getFromCacheKeyExists("Exception");
+    getFromCacheKeyExists("stdClass");
+    getFromCacheKeyExists("Directory");
 }
 $speed_cached_ake = round(1000 * Debugger::timer("speed-cached-ake"), 5);
 echo " (array_key_exists) cached: " . $speed_cached_ake . " ms\n";

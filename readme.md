@@ -16,7 +16,8 @@ MIT
 
 
 ```php
-use Zrny\Base\Enum;class DayOfWeek extends Enum
+use Zrny\Base\Enum;
+class DayOfWeek extends Enum
 {
     const Sunday = 0;
     const Monday = 1;
