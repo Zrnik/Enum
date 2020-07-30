@@ -1,0 +1,23 @@
+{
+  "name": "zrny/enum",
+  "description": "Base PHP class for ENUM classes.",
+  "version": "0.0.1",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Zrny\\Base\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Štěpán Zrník",
+      "email": "stepan@zrnik.eu"
+    }
+  ],
+  "require": {
+  },
+  "require-dev": {
+    "nette/tester": "^2.3",
+    "tracy/tracy": "2.7.5"
+  }
+}
