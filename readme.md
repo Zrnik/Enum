@@ -1,9 +1,10 @@
 # PHP Enum
 
 I created this class because of this stack overflow question:
+
 https://stackoverflow.com/questions/254514/php-and-enumerations
 
-I liked the selected by [Brian Cline](https://stackoverflow.com/a/254543/3133859) answer, but it was not complete enough for me.
+I liked the selected answer by [Brian Cline](https://stackoverflow.com/a/254543/3133859), but it was not complete enough for me.
 
 # License
 
@@ -11,7 +12,7 @@ MIT
 
 # Usage
 
-####Create Enum Class
+#### Create Enum Class
 
 
 ```php
@@ -28,7 +29,7 @@ use Zrny\Base\Enum;class DayOfWeek extends Enum
 }
 ```
 
-####Compare
+#### Compare
 
 
 ```php
@@ -40,7 +41,7 @@ if($this->Stardate->DayOfWeek === DayOfWeek::Monday)
 }
 ```
 
-####Enumerate
+#### Enumerate
 
 ```php
 foreach(DayOfWeek::getValues() as $value)
@@ -57,7 +58,7 @@ foreach(DayOfWeek::getNames() as $name)
 }
 ```
 
-####Check
+#### Check
 
 ```php
 if(DayOfWeek::getValue("Monday") === DayOfWeek::Monday) {
@@ -77,12 +78,12 @@ if(DayOfWeek::getValue("monday ", false) === DayOfWeek::Monday) {
 } 
 ```
 
-#####???
+##### ???
 
-#####PROFIT!
+##### PROFIT!
 
 
-#Methods
+# Methods
 
 
 
