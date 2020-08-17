@@ -1,7 +1,7 @@
 {
   "name": "zrny/enum",
-  "description": "Base PHP class for ENUM classes.",
-  "version": "0.0.1",
+  "description": "Use constants as enum in PHP language.",
+  "version": "1.0.0",
   "license": "MIT",
   "autoload": {
     "psr-4": {
@@ -11,7 +11,8 @@
   "authors": [
     {
       "name": "Štěpán Zrník",
-      "email": "stepan@zrnik.eu"
+      "email": "stepan@zrnik.eu",
+      "homepage": "https://stepan.zrnik.eu/"
     }
   ],
   "require": {

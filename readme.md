@@ -1,19 +1,19 @@
-# PHP Enum
-
-I created this class because of this stack overflow question:
+# PHP Enum Released!
+  
+This class was created because of this Stack Overflow question:
 
 https://stackoverflow.com/questions/254514/php-and-enumerations
 
 I liked the selected answer by [Brian Cline](https://stackoverflow.com/a/254543/3133859), but it was not complete enough for me.
 
+It works as intended, so I created first major version, and probably the last version.
 # License
 
-MIT
+[MIT](license.md)
 
 # Usage
 
 #### Create Enum Class
-
 
 ```php
 use Zrny\Base\Enum;
@@ -42,7 +42,7 @@ if($this->Stardate->DayOfWeek === DayOfWeek::Monday)
 }
 ```
 
-#### Enumerate
+#### Enumerate 
 
 ```php
 foreach(DayOfWeek::getValues() as $value)
@@ -83,10 +83,7 @@ if(DayOfWeek::getValue("monday ", false) === DayOfWeek::Monday) {
 
 ##### PROFIT!
 
-
 # Methods
-
-
 
 `\Zrny\Base\Enum::getName(mixed $Value) : array`
 
@@ -96,11 +93,7 @@ Gets constant name by its value.
 
 Gets value of a constant by its name. Case sensitivity modified by second argument.
 
-
 ------
-
-
-
 
 `\Zrny\Base\Enum::isValidName(string $Name[, bool $caseSensitive = true]) : bool`
 
@@ -110,11 +103,7 @@ Check if constant with this name exists constant exists within all constants.
 
 Checks if constant with this value exists within all constants.
 
-
-
-
 ------
-
 
 `\Zrny\Base\Enum::toArray([$caseSensitive = true]) : array`
 
@@ -129,9 +118,3 @@ Returns list with all names defined in enum.
 Returns list with all values defined in enum.
 
 ------
-
-
-
-
-
-
