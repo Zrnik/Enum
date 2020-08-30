@@ -6,10 +6,12 @@ https://stackoverflow.com/questions/254514/php-and-enumerations
 
 I liked the selected answer by [Brian Cline](https://stackoverflow.com/a/254543/3133859), but it was not complete enough for me.
 
-It works as intended, so I created first major version, and probably the last version.
-# License
+# License: [MIT](license.md)
 
-[MIT](license.md)
+# Change Log
+
+- 1.0.0 - First Release
+- 1.0.1 - Fixed Errors & Tests (Oops)
 
 # Usage
 
@@ -87,7 +89,7 @@ if(DayOfWeek::getValue("monday ", false) === DayOfWeek::Monday) {
 
 `\Zrny\Base\Enum::getName(mixed $Value) : array`
 
-Gets constant name by its value.
+Gets constant name by the value.
 
 `\Zrny\Base\Enum::getValue(string $Name[, bool $caseSensitive = true]) : mixed`
 
@@ -97,24 +99,24 @@ Gets value of a constant by its name. Case sensitivity modified by second argume
 
 `\Zrny\Base\Enum::isValidName(string $Name[, bool $caseSensitive = true]) : bool`
 
-Check if constant with this name exists constant exists within all constants.
+Checks if the name is present in the Enum. Case sensitivity modified by second argument.
 
 `\Zrny\Base\Enum::isValidValue(string $Value) : bool`
 
-Checks if constant with this value exists within all constants.
+Checks if the value is present in the Enum.
 
 ------
 
 `\Zrny\Base\Enum::toArray([$caseSensitive = true]) : array`
 
-Returns an associative array with all constants.
+Returns an associative array with all the constants.
 
 `\Zrny\Base\Enum::getNames([$caseSensitive = true]) : array`
 
-Returns list with all names defined in enum.
+Returns a list with all names defined in an enum.
 
 `\Zrny\Base\Enum::getValues() : array`
 
-Returns list with all values defined in enum.
+Returns an array with all the values defined in an enum.
 
 ------

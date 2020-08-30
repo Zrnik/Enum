@@ -1,11 +1,11 @@
 <?php
 /*
- * Zrník.eu | Enum  
+ * Zrník.eu | Enum
  * User: Programátor
  * Date: 30.07.2020 10:52
  */
 
-namespace Tester\Examples;
+namespace ExampleEnums;
 
 use Zrny\Base\Enum;
 

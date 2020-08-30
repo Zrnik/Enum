@@ -1,11 +1,12 @@
 {
   "name": "zrny/enum",
   "description": "Use constants as enum in PHP language.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "autoload": {
     "psr-4": {
-      "Zrny\\Base\\": "src/"
+      "Zrny\\Base\\": "src/",
+      "ExampleEnums\\": "tests/Examples"
     }
   },
   "authors": [
@@ -16,9 +17,10 @@
     }
   ],
   "require": {
+    "php": ">=7.4"
   },
+
   "require-dev": {
-    "nette/tester": "^2.3",
-    "tracy/tracy": "2.7.5"
+    "phpunit/phpunit": "^9"
   }
 }

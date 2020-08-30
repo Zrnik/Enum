@@ -1,72 +1,140 @@
 <?php
 
-/*
- * I have no idea how to write tests.. (yet)
- *
- * Hope this will do :)
- */
+use ExampleEnums\InvalidEnum;
+use ExampleEnums\TestEnum;
+use PHPUnit\Framework\TestCase;
 
-include __DIR__ . '/bootstrap.php';
-include __DIR__ . '/Examples/TestEnum.php';
+class EnumTest extends TestCase
+{
 
-use Tester\Assert;
-use Tester\Examples\TestEnum;
+    public function testInvalidEnum()
+    {
+        $this->expectException("\LogicException");
+        InvalidEnum::toArray();
+    }
 
-Assert::equal(["North", "South", "East", "West"], TestEnum::getNames());
-Assert::equal([0, 1, 2, 3], TestEnum::getValues());
-Assert::equal([
-    "North" => 0,
-    "South" => 1,
-    "East" => 2,
-    "West" => 3
-],
-    TestEnum::toArray());
-Assert::equal([
-    "north" => 0,
-    "south" => 1,
-    "east" => 2,
-    "west" => 3
-],
-    TestEnum::toArray(false));
+    public function testToArray()
+    {
+        $this->assertSame(
+            [
+                'North' => 0,
+                'South' => 1,
+                'East' => 2,
+                'West' => 3,
+            ],
+            TestEnum::toArray()
+        );
+    }
+
+    public function testGetName()
+    {
+        $this->assertSame(
+            "North",
+            TestEnum::getName(0)
+        );
+
+        $this->assertNotSame(
+            "north",
+            TestEnum::getName(0)
+        );
 
 
-Assert::equal("North", TestEnum::getName(0));
-Assert::notEqual("South", TestEnum::getName(0));
-Assert::notEqual("East", TestEnum::getName(0));
-Assert::notEqual("West", TestEnum::getName(0));
+        $this->expectException("\InvalidArgumentException");
+        TestEnum::getName(4);
+    }
 
-Assert::equal("North", TestEnum::getName(0));
-Assert::notEqual("North", TestEnum::getName(1));
-Assert::notEqual("North", TestEnum::getName(2));
-Assert::notEqual("North", TestEnum::getName(3));
+    public function testGetValue()
+    {
+        $this->assertSame(
+            0,
+            TestEnum::getValue("North")
+        );
 
-Assert::equal(0, TestEnum::getValue("North"));
-Assert::notEqual(1, TestEnum::getValue("North"));
-Assert::notEqual(2, TestEnum::getValue("North"));
-Assert::notEqual(3, TestEnum::getValue("North"));
+        $this->assertSame(
+            0,
+            TestEnum::getValue("north",false)
+        );
 
-Assert::equal(0, TestEnum::getValue("North"));
-Assert::notEqual(0, TestEnum::getValue("South"));
-Assert::notEqual(0, TestEnum::getValue("East"));
-Assert::notEqual(0, TestEnum::getValue("West"));
+        $this->expectException("\InvalidArgumentException");
+        TestEnum::getValue("north");
+    }
 
-Assert::true(TestEnum::isValidValue(0));
-Assert::true(TestEnum::isValidValue(1));
-Assert::false(TestEnum::isValidValue(4));
+    public function testGetValues()
+    {
+        $this->assertSame(
+            [0,1,2,3],
+            TestEnum::getValues()
+        );
+    }
 
-Assert::true(TestEnum::isValidName("North"));
-Assert::true(TestEnum::isValidName("West"));
-Assert::false(TestEnum::isValidName("NorthWest"));
+    public function testGetNames()
+    {
+        $this->assertSame(
+            [
+                'North',
+                'South',
+                'East',
+                'West'
+            ],
+            TestEnum::getNames()
+        );
 
-Assert::equal(0, TestEnum::getValue("North"));
+        $this->assertSame(
+            [
+                'north',
+                'south',
+                'east',
+                'west'
+            ],
+            TestEnum::getNames(false)
+        );
+    }
 
-Assert::exception(function () {
-    TestEnum::getValue("north");
-}, InvalidArgumentException::class);
+    public function testIsValidName()
+    {
+        $this->assertTrue(
+            TestEnum::isValidName("North")
+        );
 
-Assert::equal(0, TestEnum::getValue("north", false));
+        $this->assertTrue(
+            TestEnum::isValidName("north", false)
+        );
 
-/*
- * Is this test file correct? Am i missing something? Let me know :)
- */
+        $this->assertNotTrue(
+            TestEnum::isValidName("north")
+        );
 
+        $this->assertTrue(
+            TestEnum::isValidName("noRtH", false)
+        );
+
+        $this->assertNotTrue(
+            TestEnum::isValidName("noRtH")
+        );
+    }
+
+    public function testIsValidValue()
+    {
+        $this->assertTrue(
+            TestEnum::isValidValue(0)
+        );
+
+        $this->assertTrue(
+            TestEnum::isValidValue(1)
+        );
+
+        $this->assertNotTrue(
+            TestEnum::isValidValue(-1)
+        );
+
+        $this->assertNotTrue(
+            TestEnum::isValidValue(4)
+        );
+
+        $this->assertNotTrue(
+            TestEnum::isValidValue("Anything else...")
+        );
+
+    }
+
+}

@@ -1,6 +1,6 @@
 <?php
 /*
- * Zrník.eu | Enum  
+ * Zrník.eu | Enum
  * User: Programátor
  * Date: 30.07.2020 9:41
  */
@@ -23,10 +23,10 @@ abstract class Enum
      * Place to save data about constants
      * @var array
      */
-    private static $const_cache = [];
+    private static array $const_cache = [];
 
     /**
-     * Throws instances out of the windows...
+     * Throws instances out of the window...
      * @throws Exception
      */
     public function __construct()
@@ -39,7 +39,7 @@ abstract class Enum
      * @param bool $caseSensitive
      * @return array
      */
-    public static function toArray($caseSensitive = true): array
+    public static function toArray($caseSensitive = true) : array
     {
         try {
             return static::_getCache($caseSensitive);
@@ -114,7 +114,7 @@ abstract class Enum
      * @return string
      * @throws InvalidArgumentException
      */
-    public static function getName($Value): string
+    public static function getName($Value) : string
     {
         try {
             $key = array_search($Value, static::_getCache(), true);
@@ -134,9 +134,13 @@ abstract class Enum
      * @param bool $caseSensitive
      * @return bool
      */
-    public static function isValidName(string $Name, $caseSensitive = true)
+    public static function isValidName(string $Name, $caseSensitive = true) : bool
     {
         $Name = trim($Name);
+
+        if(!$caseSensitive)
+            $Name = strtolower($Name);
+
         return in_array($Name, static::getNames($caseSensitive), true);
     }
 
@@ -159,9 +163,9 @@ abstract class Enum
      * @param mixed $Value
      * @return bool
      */
-    public static function isValidValue(string $Value)
+    public static function isValidValue($Value) : bool
     {
-        return in_array($Value, static::getValues());
+        return in_array($Value, static::getValues(),true);
     }
 
     /**
