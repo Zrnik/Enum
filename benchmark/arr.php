@@ -8,11 +8,11 @@ include __DIR__ . '/../vendor/autoload.php';
  * 'isset' or 'array_key_exists'
  */
 
-$Rounds = pow(10, 9);
+$Rounds = pow(10, 8);
 /**
  * For 10^8
  * --------
- * C:\Code2\Enum>php benchmark/arr.php
+ * C:\Projects\Enum>php benchmark/arr.php
  *              isset(): 3433.87198 ms
  *   array_key_exists(): 5685.10222 ms
  */
