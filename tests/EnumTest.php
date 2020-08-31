@@ -10,7 +10,7 @@ class EnumTest extends TestCase
     public function testInvalidEnum()
     {
         $this->expectException("\LogicException");
-        InvalidEnum::toArray();
+        InvalidEnum::toArray(); //Actually thrown in '_getCache'. Its called from every method...
     }
 
     public function testToArray()
