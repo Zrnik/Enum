@@ -1,20 +1,28 @@
-# PHP Enum Released!
+# Enum for PHP
 
 ![GitHub](https://img.shields.io/github/license/zrny/enum)
 ![Packagist Downloads](https://img.shields.io/packagist/dm/zrny/enum)
+![Travis (.com)](https://img.shields.io/travis/com/zrny/enum)
   
 This class was created because of this Stack Overflow question:
-
 https://stackoverflow.com/questions/254514/php-and-enumerations
 
-I liked the selected answer by [Brian Cline](https://stackoverflow.com/a/254543/3133859), but it was not complete enough for me.
+Many times I was googling for [Brian Cline's](https://stackoverflow.com/a/254543/3133859) 
+answer. And as many times I copied it, that many times I was extending it for my needs. 
+ 
+**But not again.**
 
-# License: [MIT](license.md)
+I have rewritten and extended the class, and the result is this package!
+
+# Installation
+
+`composer require zrny/enum`
 
 # Change Log
 
 - 1.0.0 - First Release
 - 1.0.1 - Fixed Errors & Tests (Oops)
+- 1.0.2 - PHPUnit Configuration and TravisCI! (*This is my first time doing this!*)
 
 # Usage
 
@@ -82,9 +90,9 @@ if(DayOfWeek::getValue("monday", false) === DayOfWeek::Monday) {
 if(DayOfWeek::getValue("monday ", false) === DayOfWeek::Monday) {    
     // true, not case sensitive AND it gets trimmed automatically
 } 
-```
+``` 
 
-##### ???
+##### ??? 
 
 ##### PROFIT!
 
@@ -96,13 +104,13 @@ Gets constant name by the value.
 
 `\Zrny\Base\Enum::getValue(string $Name[, bool $caseSensitive = true]) : mixed`
 
-Gets value of a constant by its name. Case sensitivity modified by second argument.
+Gets value of a constant by its name. Case sensitivity is modified by second argument.
 
 ------
 
 `\Zrny\Base\Enum::isValidName(string $Name[, bool $caseSensitive = true]) : bool`
 
-Checks if the name is present in the Enum. Case sensitivity modified by second argument.
+Checks if the name is present in the Enum. Case sensitivity is modified by second argument.
 
 `\Zrny\Base\Enum::isValidValue(string $Value) : bool`
 
