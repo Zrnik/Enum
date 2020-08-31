@@ -4,3 +4,10 @@ php:
 
 install:
   - travis_retry composer install --no-progress --prefer-dist
+
+script:
+  - vendor/bin/phpunit ./tests
+
+cache:
+  directories:
+    - $HOME/.composer/cache

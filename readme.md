@@ -1,4 +1,7 @@
 # PHP Enum Released!
+
+![GitHub](https://img.shields.io/github/license/zrny/enum)
+![Packagist Downloads](https://img.shields.io/packagist/dm/zrny/enum)
   
 This class was created because of this Stack Overflow question:
 
