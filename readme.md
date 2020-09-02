@@ -2,8 +2,8 @@
 
 ![GitHub](https://img.shields.io/github/license/zrny/enum)
 ![Packagist Downloads](https://img.shields.io/packagist/dm/zrny/enum)
-![Travis (.com)](https://img.shields.io/travis/org/zrny/enum)
-![Packagist Version](https://img.shields.io/packagist/v/zrny/enum)
+![Travis (.com)](https://api.travis-ci.org/Zrny/Enum.svg?branch=master)
+![Packagist Version](https://img.shields.io/packagist/v/zrny/enum)  
   
 This class was created because of this Stack Overflow question:
 https://stackoverflow.com/questions/254514/php-and-enumerations
