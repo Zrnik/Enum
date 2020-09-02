@@ -2,7 +2,7 @@
 
 ![GitHub](https://img.shields.io/github/license/zrny/enum)
 ![Packagist Downloads](https://img.shields.io/packagist/dm/zrny/enum)
-![Travis (.com)](https://img.shields.io/travis/com/zrny/enum)
+![Travis (.com)](https://img.shields.io/travis/org/zrny/enum)
 ![Packagist Version](https://img.shields.io/packagist/v/zrny/enum)
   
 This class was created because of this Stack Overflow question:
