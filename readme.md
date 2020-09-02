@@ -84,14 +84,14 @@ if(DayOfWeek::getValue("monday") === DayOfWeek::Monday) {
      // Invalid Argument Exception
 }
 
-if(DayOfWeek::getValue("monday", false) === DayOfWeek::Monday) {   
+if(DayOfWeek::getValue("monday", false) === DayOfWeek::Monday) {
     // true, case sensitivity disabled
-} 
+}
 
-if(DayOfWeek::getValue("monday ", false) === DayOfWeek::Monday) {    
+if(DayOfWeek::getValue("monday ", false) === DayOfWeek::Monday) {
     // true, not case sensitive AND it gets trimmed automatically
-} 
-``` 
+}
+```
 
 ##### ??? 
 
