@@ -19,12 +19,9 @@ I have rewritten and extended the class, and the result is this package!
 
 `composer require zrnik/enum`
 
-# Change Log
+# Change Log 
 
-- 1.0.0 - First Release
-- 1.0.1 - Fixed Errors & Tests (Oops)
-- 1.0.2 - PHPUnit Configuration and TravisCI! (*This is my first time doing this!*)
-- 1.0.3 - Change of the namespace (BC Break)
+- 1.0.0 - Re-Namespace Release (from zrny/enum)
 
 # Usage
 

@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="839139e3-d917-47bb-a555-41bafc9f295b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Examples/InvalidEnum.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Examples/InvalidEnum.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Examples/TestEnum.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Examples/TestEnum.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,14 +81,30 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1600372077626</updated>
-      <workItem from="1600372078771" duration="1040000" />
+      <workItem from="1600372078771" duration="1785000" />
     </task>
+    <task id="LOCAL-00001" summary="fix example enums for tests, also needs a new namespace, somehow its missing in the previous commit">
+      <created>1600373414687</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1600373414687</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="fix example enums for tests, also needs a new namespace, somehow its missing in the previous commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix example enums for tests, also needs a new namespace, somehow its missing in the previous commit" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="406" y="88" key="CommitChangelistDialog2" timestamp="1600373413477">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="406" y="88" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1600373413477" />
     <state x="598" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1600373009137">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
