@@ -7,7 +7,7 @@
 
 namespace ExampleEnums;
 
-use Zrny\Base\Enum;
+use Zrnik\Base\Enum;
 
 class TestEnum extends Enum
 {
