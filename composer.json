@@ -1,11 +1,11 @@
 {
-  "name": "zrny/enum",
+  "name": "zrnik/enum",
   "description": "Solution for almost 12 years old Stack Overflow question I returned many times to, is finally packed and ready to require!",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "license": "MIT",
   "autoload": {
     "psr-4": {
-      "Zrny\\Base\\": "src/",
+      "Zrnik\\Base\\": "src/",
       "ExampleEnums\\": "tests/Examples"
     }
   },

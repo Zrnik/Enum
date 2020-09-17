@@ -1,9 +1,9 @@
 # Enum for PHP
 
-![GitHub](https://img.shields.io/github/license/zrny/enum)
-![Packagist Downloads](https://img.shields.io/packagist/dm/zrny/enum)
-![Travis (.com)](https://api.travis-ci.org/Zrny/Enum.svg?branch=master)
-![Packagist Version](https://img.shields.io/packagist/v/zrny/enum)  
+![GitHub](https://img.shields.io/github/license/zrnik/enum)
+![Packagist Downloads](https://img.shields.io/packagist/dm/zrnik/enum)
+![Travis (.com)](https://api.travis-ci.com/Zrnik/Enum.svg?branch=master)
+![Packagist Version](https://img.shields.io/packagist/v/zrnik/enum)  
   
 This class was created because of this Stack Overflow question:
 https://stackoverflow.com/questions/254514/php-and-enumerations
@@ -17,20 +17,21 @@ I have rewritten and extended the class, and the result is this package!
 
 # Installation
 
-`composer require zrny/enum`
+`composer require zrnik/enum`
 
 # Change Log
 
 - 1.0.0 - First Release
 - 1.0.1 - Fixed Errors & Tests (Oops)
 - 1.0.2 - PHPUnit Configuration and TravisCI! (*This is my first time doing this!*)
+- 1.0.3 - Change of the namespace (BC Break)
 
 # Usage
 
 #### Create Enum Class
 
 ```php
-use Zrny\Base\Enum;
+use Zrnik\Base\Enum;
 class DayOfWeek extends Enum
 {
     const Sunday = 0;
@@ -99,35 +100,35 @@ if(DayOfWeek::getValue("monday ", false) === DayOfWeek::Monday) {
 
 # Methods
 
-`\Zrny\Base\Enum::getName(mixed $Value) : array`
+`\Zrnik\Base\Enum::getName(mixed $Value) : array`
 
 Gets constant name by the value.
 
-`\Zrny\Base\Enum::getValue(string $Name[, bool $caseSensitive = true]) : mixed`
+`\Zrnik\Base\Enum::getValue(string $Name[, bool $caseSensitive = true]) : mixed`
 
 Gets value of a constant by its name. Case sensitivity is modified by second argument.
 
 ------
 
-`\Zrny\Base\Enum::isValidName(string $Name[, bool $caseSensitive = true]) : bool`
+`\Zrnik\Base\Enum::isValidName(string $Name[, bool $caseSensitive = true]) : bool`
 
 Checks if the name is present in the Enum. Case sensitivity is modified by second argument.
 
-`\Zrny\Base\Enum::isValidValue(string $Value) : bool`
+`\Zrnik\Base\Enum::isValidValue(string $Value) : bool`
 
 Checks if the value is present in the Enum.
 
 ------
 
-`\Zrny\Base\Enum::toArray([$caseSensitive = true]) : array`
+`\Zrnik\Base\Enum::toArray([$caseSensitive = true]) : array`
 
 Returns an associative array with all the constants.
 
-`\Zrny\Base\Enum::getNames([$caseSensitive = true]) : array`
+`\Zrnik\Base\Enum::getNames([$caseSensitive = true]) : array`
 
 Returns a list with all names defined in an enum.
 
-`\Zrny\Base\Enum::getValues() : array`
+`\Zrnik\Base\Enum::getValues() : array`
 
 Returns an array with all the values defined in an enum.
 

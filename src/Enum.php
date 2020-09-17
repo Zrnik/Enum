@@ -1,11 +1,12 @@
 <?php
+
 /*
  * Zrník.eu | Enum
  * User: Programátor
  * Date: 30.07.2020 9:41
  */
 
-namespace Zrny\Base;
+namespace Zrnik\Base;
 
 use Exception;
 use InvalidArgumentException;
@@ -15,7 +16,7 @@ use ReflectionException;
 
 /**
  * Class Enum
- * @package Zrny\Base
+ * @package Zrnik\Base
  */
 abstract class Enum
 {
