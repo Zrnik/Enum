@@ -19,9 +19,11 @@
   "require": {
     "php": ">=7.4"
   },
-
   "require-dev": {
     "phpunit/phpunit": "^9",
-    "tracy/tracy": "^v2.7.5"
+    "tracy/tracy": "^v2"
+  },
+  "scripts": {
+    "phpunit": "phpunit --coverage-html temp/coverage"
   }
 }

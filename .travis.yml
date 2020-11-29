@@ -1,6 +1,11 @@
 language: php
 php:
   - '7.4'
+  - '8.0snapshot'
+
 
 install:
   - travis_retry composer install --no-progress --prefer-dist
+
+script:
+  - composer phpunit
