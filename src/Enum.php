@@ -24,7 +24,7 @@ abstract class Enum
      * Place to save data about constants
      * @var array
      */
-    private static array $const_cache = [];
+    private static $const_cache = [];
 
     /**
      * Throws instances out of the window...

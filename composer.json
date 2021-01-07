@@ -1,7 +1,7 @@
 {
   "name": "zrnik/enum",
   "description": "Solution for almost 12 years old Stack Overflow question I returned many times to, is finally packed and ready to require!",
-  "version": "v1.0.0",
+  "version": "v0.1.0",
   "license": "MIT",
   "autoload": {
     "psr-4": {
@@ -17,11 +17,11 @@
     }
   ],
   "require": {
-    "php": ">=7.4"
+    "php": ">=7.2"
   },
 
   "require-dev": {
-    "phpunit/phpunit": "^9",
+    "phpunit/phpunit": "^8",
     "tracy/tracy": "^v2.7.5"
   }
 }
