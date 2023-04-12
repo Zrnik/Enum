@@ -22,7 +22,7 @@ abstract class Enum
 {
     /**
      * Place to save data about constants
-     * @var array
+     * @var array<string, array<string, scalar|null>>
      */
     private static array $const_cache = [];
 
@@ -38,12 +38,12 @@ abstract class Enum
     /**
      * Returns an associative array with all constants.
      * @param bool $caseSensitive
-     * @return array
+     * @return array<string, scalar|null>
      */
-    public static function toArray($caseSensitive = true) : array
+    public static function toArray(bool $caseSensitive = true) : array
     {
         try {
-            return static::_getCache($caseSensitive);
+            return self::_getCache($caseSensitive);
         } catch (ReflectionException $e) {
             return [];
         }
@@ -52,20 +52,27 @@ abstract class Enum
     /**
      * Cache creator. Constants are parsed, then saved and then served.
      * @param bool $caseSensitive
-     * @return array
-     * @throws ReflectionException
+     * @return array<string, scalar|null>
      */
     private static function _getCache(bool $caseSensitive = true): array
     {
-        $key = get_called_class() . $caseSensitive ?? '::caseSensitive';
+        $key = get_called_class() . ($caseSensitive ? '::caseSensitive' : '');
         if (!isset(self::$const_cache[$key])) {
             $constantList = (new ReflectionClass(get_called_class()))->getConstants();
 
+            /** @var string[] $knownKeys */
             $knownKeys = [];
+
+            /** @var array<scalar|null> $knownValues */
             $knownValues = [];
 
+            /** @var array<string, scalar|null> $resultArray */
             $resultArray = [];
 
+            /**
+             * @var string $ConstantKey
+             * @var scalar|null $ConstantValue
+             */
             foreach ($constantList as $ConstantKey => $ConstantValue) {
                 if (in_array(strtolower($ConstantKey), $knownKeys)) {
                     throw new LogicException("Key '" . $ConstantKey . "' is already defined in '" . get_called_class() . "' or parent class!");
@@ -75,7 +82,12 @@ abstract class Enum
                 if (in_array($ConstantValue, $knownValues)) {
                     throw new LogicException("Value '" . $ConstantValue . "' in key '" . $ConstantKey . "' is already defined in '" . get_called_class() . "' or parent class!");
                 }
-                $knownValues[] = strtolower($ConstantValue);
+
+                if(is_string($ConstantValue)) {
+                    $ConstantValue = strtolower((string)$ConstantValue);
+                }
+
+                $knownValues[] = $ConstantValue;
 
                 $realKey = $caseSensitive ? $ConstantKey : strtolower($ConstantKey);
 
@@ -89,16 +101,16 @@ abstract class Enum
 
     /**
      * Gets value of a constant by its name. Case sensitivity modified by second argument.
-     * @param $Name
+     * @param string $Name
      * @param bool $caseSensitive
      * @return mixed
      * @throws InvalidArgumentException
      */
-    public static function getValue($Name, $caseSensitive = true)
+    public static function getValue(string $Name, bool $caseSensitive = true)
     {
         $Name = trim($Name);
         try {
-            $constants = static::_getCache($caseSensitive);
+            $constants = self::_getCache($caseSensitive);
 
             if (isset($constants[$Name]))
                 return $constants[$Name];
@@ -118,10 +130,11 @@ abstract class Enum
     public static function getName($Value) : string
     {
         try {
-            $key = array_search($Value, static::_getCache(), true);
+            $key = array_search($Value, self::_getCache(), true);
 
-            if ($key === false || $key === null)
+            if ($key === false) {
                 throw new InvalidArgumentException();
+            }
 
             return strval($key);
         } catch (ReflectionException $e) {
@@ -148,12 +161,12 @@ abstract class Enum
     /**
      * Returns list with all names defined in enum.
      * @param bool $caseSensitive
-     * @return array
+     * @return string[]
      */
     public static function getNames(bool $caseSensitive = true): array
     {
         try {
-            return array_keys(static::_getCache($caseSensitive));
+            return array_keys(self::_getCache($caseSensitive));
         } catch (ReflectionException $e) {
             return [];
         }
@@ -171,12 +184,12 @@ abstract class Enum
 
     /**
      * Returns list with all values defined in enum.
-     * @return array
+     * @return array<scalar|null>
      */
     public static function getValues(): array
     {
         try {
-            return array_values(static::_getCache());
+            return array_values(self::_getCache());
         } catch (ReflectionException $e) {
             return [];
         }

@@ -1,16 +1,23 @@
 <?php
 
+use ExampleEnums\EnumWithNullValue;
 use ExampleEnums\InvalidEnum;
 use ExampleEnums\TestEnum;
 use PHPUnit\Framework\TestCase;
 
 class EnumTest extends TestCase
 {
+    public function testNullValue()
+    {
+        // Because PHP 8.1 deprecated null in strtolower...
+        EnumWithNullValue::toArray();
+        $this->addToAssertionCount(1);
+    }
 
     public function testInvalidEnum()
     {
         $this->expectException("\LogicException");
-        InvalidEnum::toArray(); //Actually thrown in '_getCache'. Its called from every method...
+        InvalidEnum::toArray(); //Actually thrown in '_getCache'. It's called from every method...
     }
 
     public function testToArray()
@@ -52,7 +59,7 @@ class EnumTest extends TestCase
 
         $this->assertSame(
             0,
-            TestEnum::getValue("north",false)
+            TestEnum::getValue("north", false)
         );
 
         $this->expectException("\InvalidArgumentException");
@@ -62,7 +69,7 @@ class EnumTest extends TestCase
     public function testGetValues()
     {
         $this->assertSame(
-            [0,1,2,3],
+            [0, 1, 2, 3],
             TestEnum::getValues()
         );
     }
