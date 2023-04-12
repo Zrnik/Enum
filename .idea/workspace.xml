@@ -4,22 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="839139e3-d917-47bb-a555-41bafc9f295b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeception.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/phpspec.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/phpunit.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Examples/EnumWithNullValue.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Enum.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Enum.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.travis.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/phpunit.xml" beforeDir="false" afterPath="$PROJECT_DIR$/phpunit.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Enum.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Enum.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/EnumTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/EnumTest.php" afterDir="false" />
-    </list>
+    <list default="true" id="839139e3-d917-47bb-a555-41bafc9f295b" name="Default Changelist" comment="php 8.1 fix" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -115,7 +100,7 @@
       <workItem from="1600372078771" duration="2756000" />
       <workItem from="1600454035712" duration="302000" />
       <workItem from="1606678208276" duration="1164000" />
-      <workItem from="1681312461585" duration="1803000" />
+      <workItem from="1681312461585" duration="1891000" />
     </task>
     <task id="LOCAL-00001" summary="fix example enums for tests, also needs a new namespace, somehow its missing in the previous commit">
       <created>1600373414687</created>
@@ -131,7 +116,14 @@
       <option name="project" value="LOCAL" />
       <updated>1600373916027</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="php 8.1 fix">
+      <created>1681314281077</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1681314281077</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -140,6 +132,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fix example enums for tests, also needs a new namespace, somehow its missing in the previous commit" />
     <MESSAGE value="update readme and composer" />
-    <option name="LAST_COMMIT_MESSAGE" value="update readme and composer" />
+    <MESSAGE value="php 8.1 fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="php 8.1 fix" />
   </component>
 </project>
