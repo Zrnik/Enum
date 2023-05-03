@@ -1,7 +1,6 @@
 {
   "name": "zrnik/enum",
   "description": "Solution for almost 12 years old Stack Overflow question I returned many times to, is finally packed and ready to require!",
-  "version": "v1.0.1",
   "license": "MIT",
   "autoload": {
     "psr-4": {
